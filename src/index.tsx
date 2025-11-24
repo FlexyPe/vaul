@@ -855,7 +855,24 @@ export const Overlay = React.forwardRef<HTMLDivElement, React.ComponentPropsWith
 
 Overlay.displayName = 'Drawer.Overlay';
 
-export type ContentProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>;
+export type ContentProps = {
+  children?: JSX.Element | JSX.Element[] | string | number | null | undefined;
+  style?: any;
+  className?: string;
+  id?: string;
+  onPointerDown?: (event: any) => void;
+  onPointerUp?: (event: any) => void;
+  onPointerMove?: (event: any) => void;
+  onPointerOut?: (event: any) => void;
+  onContextMenu?: (event: any) => void;
+  onPointerDownOutside?: (event: any) => void;
+  onOpenAutoFocus?: (event: any) => void;
+  onFocusOutside?: (event: any) => void;
+  onEscapeKeyDown?: (event: any) => void;
+  onInteractOutside?: (event: any) => void;
+  forceMount?: true;
+  [key: string]: any;
+};
 
 export const Content = React.forwardRef<HTMLDivElement, ContentProps>(function (
   { onPointerDownOutside, style, onOpenAutoFocus, ...rest },
