@@ -1152,7 +1152,11 @@ export function NestedRoot({ onDrag, onOpenChange, open: nestedIsOpen, ...rest }
   );
 }
 
-type PortalProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Portal>;
+type PortalProps = {
+  container?: HTMLElement | null;
+  children?: JSX.Element | JSX.Element[] | string | number | null | undefined;
+  forceMount?: true;
+};
 
 export function Portal(props: PortalProps) {
   const context = useDrawerContext();
