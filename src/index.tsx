@@ -50,7 +50,7 @@ export interface WithoutFadeFromProps {
 export type DialogProps = {
   activeSnapPoint?: number | string | null;
   setActiveSnapPoint?: (snapPoint: number | string | null) => void;
-  children?: React.ReactNode;
+  children?: JSX.Element | JSX.Element[] | string | number | null | undefined;
   open?: boolean;
   /**
    * Number between 0 and 1 that determines when the drawer should be closed.
@@ -141,7 +141,7 @@ export function ConfigProvider({
   container,
   containerId,
 }: {
-  children: React.ReactNode;
+  children: JSX.Element | JSX.Element[] | string | number | null | undefined;
   container?: HTMLElement | null;
   containerId?: string;
 }) {
